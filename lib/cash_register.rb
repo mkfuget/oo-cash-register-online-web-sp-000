@@ -1,9 +1,10 @@
 class CashRegister
   attr_accessor :total 
   attr_accessor :transaction_list
-  def initialize 
+  def initialize(discount = 0)
     @total = 0.0 
     @transaction_list = []
+    @discount = discount
   end
   
   def add_item(item, price, quantity = 1)
@@ -20,7 +21,7 @@ class CashRegister
     
     def apply_discount
       discount = 20
-      @total *= ((100.0-discount)/100.0)
+      @total *= ((100.0-@discount)/100.0)
       puts "test"
       return @total 
     end
