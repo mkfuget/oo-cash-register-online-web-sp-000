@@ -24,6 +24,6 @@ class CashRegister
     def apply_discount
       discount = 20
       @total *= ((100.0-@discount)/100.0)
-      return "After the discount, the total comes to $#{@total.to_nearest_i}." 
+      return "After the discount, the total comes to $#{@total.round}." 
     end
 end 
